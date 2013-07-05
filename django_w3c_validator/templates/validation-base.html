@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Django W3C Validator</title>
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Alef:400,700);
+        @import url(http://fonts.googleapis.com/css?family=Oleo+Script);
+        body { font-family: 'Alef', sans-serif; padding: 20px; }
+        h1 { font-family: 'Oleo Script'; color: #bbb; }
+        h1 img { display: none; margin-right: 20px; }
+        strong { color: #f55; }
+        img { width: 20px; height: 20px; }
+        .results {
+            padding-bottom: 30px;
+            overflow: hidden;
+        }
+    </style>
+    {% if collapse %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('.results').hide();
+            $('h1').prepend('<img class="plus" src="{{ STATIC_URL }}django_w3c_validator/+.png" alt="+" />');
+            $('h1').prepend('<img class="minus" src="{{ STATIC_URL }}django_w3c_validator/-.png" alt="-" />');
+            $('h1 img.plus').show();
+            $('.results-wrapper').click(function() {
+                $(this).find('.results').slideToggle();
+                $(this).find('h1 img').toggle();
+            });
+            $('.results').first().click();
+        });
+    </script>
+    {% endif %}
+</head>
+
+<body>
+    <div>
+        {% include 'validation-results.html' %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+*.py[co]
+django_w3c_validator/templates/*
+!django_w3c_validator/templates/validation-base.html
