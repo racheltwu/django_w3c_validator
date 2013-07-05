@@ -8,7 +8,7 @@ setup(
     author='Rachel Bell',
     author_email='rachel.twu@gmail.com',
     description='Crawls for internal urls at a domain, then validates them using W3C validator.',
-    install_requires=['Django>=1.3'],
+    install_requires=['Django>=1.3', 'mechanize'],
     url='https://github.com/racheltwu/django_w3c_validator',
     packages=['django_w3c_validator'],
     license='BSD',
