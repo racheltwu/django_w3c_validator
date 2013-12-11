@@ -43,7 +43,11 @@ at *http://yourdomain.com/validation/urls*
 Usage
 -----
 
-Call the management command `validate` to validate all the internal urls on your site. The command will detect your domain name from your settings
+Run the managagement command to validate all the internal urls on your site:
+
+        python manage.py validate_html
+
+The command will detect your domain name from your settings
 file and proceed to crawl it for all internal links, and save all found urls to a text file to use again later. If this file
 already exists, it will not crawl the site again unless you pass the `--crawl` option with the command.
 
